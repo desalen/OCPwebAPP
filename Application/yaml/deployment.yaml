@@ -2,7 +2,7 @@ kind: Deployment
 apiVersion: apps/v1
 metadata:
 # set your lab user name
-  name: desalen-hello-world
+  name: user17-hello-world
 spec:
   replicas: 3
   selector:
