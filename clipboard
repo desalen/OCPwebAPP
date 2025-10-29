@@ -1,0 +1,2 @@
+docker build . -t quay.io/desalen/quaydannyrepo:v1
+docker push  quay.io/desalen/quaydannyrepo:v1
