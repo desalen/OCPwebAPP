@@ -14,8 +14,10 @@ spec:
       labels:
 # set your lab user name
         app: user17-hello-world
-    spec:
+       spec:
       containers:
+          name: hello-world
+          image: 'quay.io/desalen/quaydannyrepo:v2'
         - resources: {}
           terminationMessagePath: /dev/termination-log
           name: hello-world
