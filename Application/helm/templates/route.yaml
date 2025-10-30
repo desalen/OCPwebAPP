@@ -1,11 +1,11 @@
 kind: Route
 apiVersion: route.openshift.io/v1
 metadata:
-  name: "{{ .Chart.Name }}-route"
+  name: "{{ .Chart.Name | lower }}-route"
 spec:
   to:
     kind: Service
-    name: "{{ .Chart.Name }}-service"
+    name: "{{ .Chart.Name | lower }}-service"
     weight: 100
   port:
     targetPort: {{ .Values.service.servicePort }}
