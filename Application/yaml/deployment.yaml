@@ -1,32 +1,29 @@
-kind: Deployment
 apiVersion: apps/v1
+kind: Deployment
 metadata:
-# set your lab user name
+  # set your lab user name
   name: user17-hello-world
 spec:
   replicas: 3
   selector:
     matchLabels:
-# set your lab user name
+      # set your lab user name
       app: user17-hello-world
   template:
     metadata:
       labels:
-# set your lab user name
+        # set your lab user name
         app: user17-hello-world
-       spec:
+    spec:
       containers:
-          name: hello-world
-          image: 'quay.io/desalen/quaydannyrepo:v2'
-        - resources: {}
-          terminationMessagePath: /dev/termination-log
-          name: hello-world
+        - name: hello-world
+          image: "quay.io/desalen/quaydannyrepo:v2"
+          imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8080
               protocol: TCP
-          imagePullPolicy: IfNotPresent
-# update with the image you build in part 1
-          image: 'quay.io/desalen/quaydannyrepo:v1'
+          resources: {}
+          terminationMessagePath: /dev/termination-log
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
   strategy:
